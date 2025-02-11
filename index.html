@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Votación simulacion</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Votación en Tiempo Real (simulado)</h1>
+        <div id="candidates">
+            <div class="candidate">
+                <img src="https://scontent.fuio7-1.fna.fbcdn.net/v/t39.30808-6/468798378_1106783658122175_9020321865075153602_n.jpg?_nc_cat=1&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeGb55dEHovyQTfunyuKg0tYFqpHsKB4lRMWqkewoHiVE0-3QeMNeOfI7W4IwyWhBOU9mh4Mok8LnE4eE1DgewKQ&_nc_ohc=LlEQsrf_ftMQ7kNvgEoKuwu&_nc_oc=AdjqcBIEwWGDORz22i9SW9JP43R3b6UVFkZy3Ic9qdzOEJGXND9KTtpex04K5PsXSq0&_nc_zt=23&_nc_ht=scontent.fuio7-1.fna&_nc_gid=Af4GNvvSHvfQyn7pvJbZ4PW&oh=00_AYDKI2BUUPh9KguzZ2UVwjPJQ48qOgp4V5RczLyffM-pNA&oe=67B0854F" alt="Luisa Gonzales">
+                <h2>Luisa Gonzales</h2>
+                <button id="vote-luisa">Votar</button>
+                <div class="progress-bar">
+                    <div id="bar-luisa" class="bar"></div>
+                </div>
+                <p id="percentage-luisa">0%</p>
+            </div>
+            <div class="candidate">
+                <img src="https://scontent.fuio7-1.fna.fbcdn.net/v/t39.30808-6/392952454_815042860414611_1592211851815712392_n.jpg?_nc_cat=1&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeF6Ne_jhpeoTUcFvoiUnpDGHkbmZ9wddcAeRuZn3B11wPHLcWFvl6dVqd7jdV84yrn3LTj6m0VwvAX6zyYIhErT&_nc_ohc=nTu2IoxdX6EQ7kNvgED0F98&_nc_oc=Adi5wWDGBlr6rAtiiY1cdlaLWnbOrMbsQRpdu8NBqdjfkRJBmn1L3xqggcpL5AiRPXw&_nc_zt=23&_nc_ht=scontent.fuio7-1.fna&_nc_gid=AOHVS5zW-rE2O3prAAoq38n&oh=00_AYCIiIKGQmeqUODP7sKZD_46LDXlCnTWgCkwoMw9KKpIQw&oe=67B08BE7" alt="Daniel Noboa">
+                <h2>Daniel Noboa</h2>
+                <button id="vote-daniel">Votar</button>
+                <div class="progress-bar">
+                    <div id="bar-daniel" class="bar"></div>
+                </div>
+                <p id="percentage-daniel">0%</p>
+            </div>
+        </div>
+        <p id="status"></p>
+        <p>Estos votos solo son de simulacion e prediccion de votos</p>
+    </div>
+    <script src="https://unpkg.com/peerjs@1.4.7/dist/peerjs.min.js"></script>
+    <script src="script.js"></script>
+    <style>
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 600px; 
+    margin: 50px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.candidate {
+    margin-bottom: 20px;
+}
+
+img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%; 
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 20px;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.bar {
+    height: 100%;
+    width: 0%;
+    background-color: #007bff;
+    transition: width 1s ease-in-out;
+}
+
+#status {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        margin: 20px auto;
+        padding: 15px;
+    }
+
+    img {
+        width: 100px;
+        height: 100px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+}
+    </style>
+</body>
+</html>
